@@ -5,7 +5,6 @@ import "fmt"
 Code is open for extension but closed for modification.
 */
 
-
 // interface can hold all type of payment
  type IPaymentProcessor interface{
 	payment()
@@ -30,25 +29,14 @@ Code is open for extension but closed for modification.
 	fmt.Println("Bank payment")
  }
 
-//  // payment process
-//  type PaymentProcessor struct{
-// 	paymentProcessor IPaymentProcessor
-//  }
-//  func (bp *PaymentProcessor) process(){
-// 	bp.paymentProcessor.payment()
-// }
-
  func main(){
 	bkashPaymentProcessor:=&BkashPaymentProcessor{}
 	nagodPaymentProcessor:=&NagodPaymentProcessor{}
 	bankPaymentProcessor:=&BankPaymentProcessor{}
 
-	// paymentProcessor:=&PaymentProcessor{bkashPaymentProcessor}
 	bkashPaymentProcessor.payment()
 
-	// paymentProcessor2:=&PaymentProcessor{nagodPaymentProcessor}
 	nagodPaymentProcessor.payment()
 
-	// paymentProcessor3:=&PaymentProcessor{bankPaymentProcessor}
 	bankPaymentProcessor.payment()
  }
